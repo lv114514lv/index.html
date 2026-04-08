@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>恐怖奶奶月度挑战 | 四月冠军殿堂</title>
+    <title>Granny月度挑战 | 四月冠军殿堂</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Chivo+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -13,7 +13,12 @@
             box-sizing: border-box;
         }
         body {
-            background: radial-gradient(circle at 20% 30%, #0a0c12, #030405);
+            /* 鲜艳绿色背景图融合 */
+            background: url('https://p3-flow-image-sign.byteimg.com/tos-cn-i-83029277f0/3711e908391b40389111191190013c3c~tplv-83029277f0-image.image') no-repeat center center fixed;
+            background-size: cover;
+            background-color: rgba(50, 205, 50, 0.7); /* 鲜艳绿色遮罩 */
+            background-blend-mode: overlay;
+            backdrop-filter: blur(2px);
             font-family: 'Inter', 'Chivo Mono', monospace, system-ui;
             color: #edeef2;
             padding: 2rem 1.5rem;
@@ -36,14 +41,14 @@
             border-radius: 60px;
             font-size: 0.8rem;
             letter-spacing: 1px;
-            border: 1px solid #8b3c2c;
-            color: #e6b8a8;
+            border: 1px solid #32cd32; /* 鲜艳绿色边框 */
+            color: #90ee90; /* 淡绿色文字 */
             margin-bottom: 1rem;
         }
         h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #F6D5B3, #D96C4A, #992E1C);
+            background: linear-gradient(135deg, #90ee90, #32cd32, #00ff00); /* 鲜艳绿色渐变 */
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -53,16 +58,16 @@
         .sub {
             font-size: 1.1rem;
             color: #b9b3c2;
-            border-top: 1px dashed #4a2a24;
+            border-top: 1px dashed #32cd32; /* 绿色虚线 */
             display: inline-block;
             padding-top: 0.7rem;
             margin-top: 0.5rem;
         }
         .progress-section {
-            background: rgba(18, 15, 24, 0.75);
+            background: rgba(18, 24, 18, 0.75);
             backdrop-filter: blur(4px);
             border-radius: 2rem;
-            border: 1px solid rgba(220, 100, 70, 0.4);
+            border: 1px solid rgba(50, 205, 50, 0.6); /* 鲜艳绿色边框 */
             padding: 1.6rem 2rem;
             margin-bottom: 3rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
@@ -74,20 +79,20 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #2f2623;
+            border-bottom: 1px solid #2f3a2f;
             padding-bottom: 0.8rem;
         }
         .month-year {
             font-size: 1.8rem;
             font-weight: 700;
             font-family: 'Chivo Mono', monospace;
-            background: #1f191e;
+            background: #1e291e;
             padding: 0.2rem 1rem;
             border-radius: 2rem;
             letter-spacing: 1px;
         }
         .status-tag {
-            background: #231b1f;
+            background: #232e23;
             padding: 0.4rem 1rem;
             border-radius: 2rem;
             font-weight: 600;
@@ -95,6 +100,7 @@
         }
         .status-tag i {
             margin-right: 8px;
+            color: #32cd32; /* 绿色图标 */
         }
         .progress-steps {
             display: flex;
@@ -106,7 +112,7 @@
         .step {
             flex: 1;
             min-width: 140px;
-            background: #0d0b12;
+            background: #0d120d;
             border-radius: 1.5rem;
             padding: 1rem 0.8rem;
             text-align: center;
@@ -114,17 +120,18 @@
             transition: all 0.2s;
         }
         .step.active {
-            background: linear-gradient(145deg, #281c1c, #1e1317);
-            box-shadow: 0 0 12px rgba(209, 87, 48, 0.4);
-            border-left-color: #f25e3a;
+            background: linear-gradient(145deg, #283628, #1e291e);
+            box-shadow: 0 0 12px rgba(50, 205, 50, 0.4); /* 绿色发光效果 */
+            border-left-color: #32cd32; /* 鲜艳绿色 */
         }
         .step.completed {
             border-left-color: #4c9e6f;
-            background: #121717;
+            background: #121a12;
         }
         .step .step-icon {
             font-size: 1.8rem;
             margin-bottom: 6px;
+            color: #32cd32; /* 绿色图标 */
         }
         .step .step-name {
             font-weight: 700;
@@ -134,31 +141,30 @@
             font-size: 0.75rem;
             opacity: 0.7;
         }
-        /* 调整为单栏布局，适配完整排名 */
         .full-rank-container {
             margin-bottom: 3rem;
         }
         .podium-card {
-            background: rgba(8, 6, 12, 0.7);
+            background: rgba(8, 12, 8, 0.7);
             backdrop-filter: blur(12px);
             border-radius: 2rem;
-            border: 1px solid rgba(220, 80, 50, 0.5);
+            border: 1px solid rgba(50, 205, 50, 0.6); /* 鲜艳绿色边框 */
             overflow: hidden;
             transition: transform 0.2s;
         }
         .card-header {
-            background: #160f12;
+            background: #161f16;
             padding: 1rem 1.5rem;
             font-size: 1.3rem;
             font-weight: 700;
-            border-bottom: 2px solid #b3492e;
+            border-bottom: 2px solid #32cd32; /* 鲜艳绿色下划线 */
             display: flex;
             align-items: center;
             gap: 0.7rem;
         }
         .card-header i {
             font-size: 1.5rem;
-            color: #dd7958;
+            color: #32cd32; /* 鲜艳绿色图标 */
         }
         .rank-table {
             width: 100%;
@@ -167,45 +173,45 @@
         .rank-table th, .rank-table td {
             padding: 1rem 1.2rem;
             text-align: left;
-            border-bottom: 1px solid #2c2125;
+            border-bottom: 1px solid #2c3a2c;
         }
         .rank-table th {
             font-weight: 600;
-            color: #cfb7ac;
-            background: #0d090e;
+            color: #90ee90; /* 淡绿色文字 */
+            background: #0d120d;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .rank-1 {
-            background: linear-gradient(90deg, #2c1b15, #1f1310);
-            border-left: 5px solid #FFD966;
+            background: linear-gradient(90deg, #2c3a2c, #1f291f);
+            border-left: 5px solid #ffff00; /* 冠军金色边框 */
         }
         .rank-2 {
-            background: linear-gradient(90deg, #212126, #18141c);
-            border-left: 5px solid #C0C0C0;
+            background: linear-gradient(90deg, #213021, #182418);
+            border-left: 5px solid #C0C0C0; /* 亚军银色边框 */
         }
         .rank-3 {
-            background: linear-gradient(90deg, #2f231d, #1c171b);
-            border-left: 5px solid #CD7F32;
+            background: linear-gradient(90deg, #2f3a2f, #1c241c);
+            border-left: 5px solid #CD7F32; /* 季军铜色边框 */
         }
         .player-name {
             font-weight: 700;
             font-size: 1.05rem;
         }
         .player-name a {
-            color: #f2bc94;
+            color: #90ee90; /* 淡绿色链接 */
             text-decoration: none;
             transition: all 0.2s;
         }
         .player-name a:hover {
-            color: #f25e3a;
-            text-shadow: 0 0 8px #f25e3a;
+            color: #32cd32; /* 鲜艳绿色hover效果 */
+            text-shadow: 0 0 8px #32cd32;
         }
         .player-time {
             font-family: 'Chivo Mono', monospace;
             font-weight: 600;
-            color: #f2bc94;
+            color: #90ee90; /* 淡绿色时间 */
         }
         .rank-badge {
             display: inline-block;
@@ -214,12 +220,13 @@
             font-weight: 800;
         }
         .empty-row td {
-            color: #6a5e64;
+            color: #6a7e6a;
             text-align: center;
             font-style: italic;
         }
         .history-area {
             background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
             border-radius: 1.8rem;
             padding: 1.5rem;
             margin-top: 1rem;
@@ -232,6 +239,9 @@
             font-weight: 600;
             margin-bottom: 1.2rem;
         }
+        .history-title i {
+            color: #32cd32; /* 绿色图标 */
+        }
         .month-selector {
             display: flex;
             flex-wrap: wrap;
@@ -239,9 +249,9 @@
             margin-bottom: 1.8rem;
         }
         .month-btn {
-            background: #1f1b22;
+            background: #1f291f;
             border: none;
-            color: #e2cfc3;
+            color: #90ee90; /* 淡绿色文字 */
             padding: 0.5rem 1.2rem;
             border-radius: 2rem;
             font-weight: 500;
@@ -250,42 +260,44 @@
             font-family: inherit;
         }
         .month-btn.active {
-            background: #a1422a;
+            background: #32cd32; /* 鲜艳绿色激活态 */
             color: white;
-            box-shadow: 0 0 8px #c95a3a;
+            box-shadow: 0 0 8px #32cd32;
         }
         .month-btn:hover {
-            background: #633b2e;
+            background: #28a745;
         }
         .history-table {
             width: 100%;
             border-collapse: collapse;
-            background: #0e0b12a0;
+            background: #0e140ea0;
             border-radius: 1rem;
             overflow: hidden;
         }
         .history-table th, .history-table td {
             padding: 0.8rem;
             text-align: left;
-            border-bottom: 1px solid #2e2529;
+            border-bottom: 1px solid #2e3a2e;
+        }
+        .history-table th {
+            color: #90ee90; /* 淡绿色表头 */
         }
         .footer {
             margin-top: 3rem;
             text-align: center;
             font-size: 0.8rem;
             opacity: 0.6;
-            border-top: 1px solid #2b2124;
+            border-top: 1px solid #2b3a2b;
             padding-top: 2rem;
         }
-        /* 主办方/赞助商链接样式 */
         .org-link {
-            color: #f2bc94;
+            color: #90ee90; /* 淡绿色链接 */
             text-decoration: none;
             transition: all 0.2s;
         }
         .org-link:hover {
-            color: #f25e3a;
-            text-shadow: 0 0 8px #f25e3a;
+            color: #32cd32; /* 鲜艳绿色hover效果 */
+            text-shadow: 0 0 8px #32cd32;
         }
         i, .fas, .far {
             pointer-events: none;
@@ -301,15 +313,14 @@
         <div class="game-badge">
             <i class="fas fa-skull"></i> 速通殿堂 · 四月血战 <i class="fas fa-clock"></i>
         </div>
-        <h1>🏚️ 恐怖奶奶月度挑战</h1>
-        <div class="sub"># 首届月度赛 # 极速逃离奶奶魔掌</div>
+        <h1>🏚️ Granny月度挑战</h1>
+        <div class="sub"># 首届月度赛</div> <!-- 已删除“极速逃离奶奶魔掌” -->
     </div>
     <div class="progress-section" id="progressSection">
     </div>
     <div style="text-align:center; margin-bottom:1rem; color:#ccc; font-size:0.95rem;">
         👉 点击 / 长按选手名字，即可跳转到对应速通视频
     </div>
-    <!-- 仅保留完整排名榜，移除冠亚季军榜 -->
     <div class="full-rank-container">
         <div class="podium-card">
             <div class="card-header">
@@ -348,15 +359,16 @@
             monthLabel: "2026年4月 · 首届挑战",
             rankings: [
                 { rank: 1, player: "doduwdsj", time: "3:27.397", link: "https://b23.tv/h9i2efN" },
-                { rank: 2, player: "Moling", time: "3:28.220", link: "https://b23.tv/LGICdSN" },
-                { rank: 3, player: "daiyu", time: "3:31.310", link: "https://b23.tv/bUfybNp" },
-                { rank: 4, player: "北尖", time: "3:35.571", link: "https://b23.tv/iFmr5ng" },
-                { rank: 5, player: "罗大佑", time: "4:50.067", link: "https://b23.tv/Rx7v9MO" }
+                { rank: 2, player: "chahly", time: "3:27.674", link: "https://b23.tv/new-chahly-link" }, // 新增第二名chahly
+                { rank: 3, player: "Moling", time: "3:28.220", link: "https://b23.tv/LGICdSN" }, // 原第二→第三
+                { rank: 4, player: "daiyu", time: "3:31.310", link: "https://b23.tv/bUfybNp" }, // 原第三→第四
+                { rank: 5, player: "北尖", time: "3:35.571", link: "https://b23.tv/iFmr5ng" }, // 原第四→第五
+                { rank: 6, player: "罗大佑", time: "4:50.067", link: "https://b23.tv/Rx7v9MO" } // 原第五→第六
             ],
             status: "ongoing",      
             progress: {
                 registrationEnd: "长期开放报名",
-                matchPeriod: "2026-04-06 至 2026-04-30",
+                matchPeriod: "2026-04-01 至 2026-04-30",
                 resultDay: "2026-04-30"
             }
         }
@@ -416,11 +428,9 @@
         if(!data || !data.rankings) return;
         const rankings = [...data.rankings].sort((a,b) => a.rank - b.rank);
         
-        // 直接渲染所有排名到完整榜单
         let fullHtml = '';
         rankings.forEach(entry => {
             let rankClass = '';
-            // 保留前三名的特殊背景样式
             if(entry.rank === 1) rankClass = 'rank-1';
             else if(entry.rank === 2) rankClass = 'rank-2';
             else if(entry.rank === 3) rankClass = 'rank-3';
@@ -476,9 +486,9 @@
             const third = rankings.find(r => r.rank === 3) || { player: '—', time: '', link: '#' };
             historyRows += `<tr>
                 <td><strong>${data.monthLabel}</strong></td>
-                <td><a href="${champion.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(champion.player)}</a> ${champion.time ? `(${champion.time})` : ''}</td>
-                <td><a href="${second.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(second.player)}</a> ${second.time ? `(${second.time})` : ''}</td>
-                <td><a href="${third.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(third.player)}</a> ${third.time ? `(${third.time})` : ''}</td>
+                <td><a href="${champion.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(champion.player)}</a> ${champion.time ? `(${champion.time})` : ''}</td>
+                <td><a href="${second.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(second.player)}</a> ${second.time ? `(${second.time})` : ''}</td>
+                <td><a href="${third.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(third.player)}</a> ${third.time ? `(${third.time})` : ''}</td>
             </tr>`;
         });
         if(historyRows === '') {
