@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>恐怖奶奶月度挑战 | 四月冠军殿堂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Chivo+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0c12, #030405);
+            font-family: 'Inter', 'Chivo Mono', monospace, system-ui;
+            color: #edeef2;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .game-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: 1px solid #8b3c2c;
+            color: #e6b8a8;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F6D5B3, #D96C4A, #992E1C);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            letter-spacing: -0.5px;
+        }
+
+        .sub {
+            font-size: 1.1rem;
+            color: #b9b3c2;
+            border-top: 1px dashed #4a2a24;
+            display: inline-block;
+            padding-top: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .progress-section {
+            background: rgba(18, 15, 24, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            border: 1px solid rgba(220, 100, 70, 0.4);
+            padding: 1.6rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .status-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #2f2623;
+            padding-bottom: 0.8rem;
+        }
+
+        .month-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Chivo Mono', monospace;
+            background: #1f191e;
+            padding: 0.2rem 1rem;
+            border-radius: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .status-tag {
+            background: #231b1f;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-tag i {
+            margin-right: 8px;
+        }
+
+        .progress-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 140px;
+            background: #0d0b12;
+            border-radius: 1.5rem;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            border-left: 3px solid;
+            transition: all 0.2s;
+        }
+
+        .step.active {
+            background: linear-gradient(145deg, #281c1c, #1e1317);
+            box-shadow: 0 0 12px rgba(209, 87, 48, 0.4);
+            border-left-color: #f25e3a;
+        }
+
+        .step.completed {
+            border-left-color: #4c9e6f;
+            background: #121717;
+        }
+
+        .step .step-icon {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .step .step-name {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .step .step-date {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        .leaderboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 760px) {
+            .leaderboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1.8rem;
+            }
+        }
+
+        .podium-card {
+            background: rgba(8, 6, 12, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(220, 80, 50, 0.5);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card-header {
+            background: #160f12;
+            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-bottom: 2px solid #b3492e;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .card-header i {
+            font-size: 1.5rem;
+            color: #dd7958;
+        }
+
+        .rank-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .rank-table th, .rank-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #2c2125;
+        }
+
+        .rank-table th {
+            font-weight: 600;
+            color: #cfb7ac;
+            background: #0d090e;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rank-1 {
+            background: linear-gradient(90deg, #2c1b15, #1f1310);
+            border-left: 5px solid #FFD966;
+        }
+        .rank-2 {
+            background: linear-gradient(90deg, #212126, #18141c);
+            border-left: 5px solid #C0C0C0;
+        }
+        .rank-3 {
+            background: linear-gradient(90deg, #2f231d, #1c171b);
+            border-left: 5px solid #CD7F32;
+        }
+        .player-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .player-name a {
+            color: #f2bc94;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .player-name a:hover {
+            color: #f25e3a;
+            text-shadow: 0 0 8px #f25e3a;
+        }
+        .player-time {
+            font-family: 'Chivo Mono', monospace;
+            font-weight: 600;
+            color: #f2bc94;
+        }
+        .rank-badge {
+            display: inline-block;
+            width: 32px;
+            text-align: center;
+            font-weight: 800;
+        }
+        .empty-row td {
+            color: #6a5e64;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .history-area {
+            background: rgba(0,0,0,0.5);
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .history-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .month-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+        .month-btn {
+            background: #1f1b22;
+            border: none;
+            color: #e2cfc3;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .month-btn.active {
+            background: #a1422a;
+            color: white;
+            box-shadow: 0 0 8px #c95a3a;
+        }
+        .month-btn:hover {
+            background: #633b2e;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #0e0b12a0;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .history-table th, .history-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #2e2529;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid #2b2124;
+            padding-top: 2rem;
+        }
+
+        i, .fas, .far {
+            pointer-events: none;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="game-badge">
+            <i class="fas fa-skull"></i> 速通殿堂 · 四月血战 <i class="fas fa-clock"></i>
+        </div>
+        <h1>🏚️ 恐怖奶奶月度挑战</h1>
+        <div class="sub"># 首届月度赛 # 极速逃离奶奶魔掌</div>
+    </div>
+
+    <div class="progress-section" id="progressSection">
+    </div>
+
+    <div style="text-align:center; margin-bottom:1rem; color:#ccc; font-size:0.95rem;">
+        👉 点击 / 长按选手名字，即可跳转到对应速通视频
+    </div>
+
+    <div class="leaderboard-grid">
+        <div class="podium-card">
+            <div class="card-header">
+                <i class="fas fa-trophy"></i> 🥇 本月冠军 · 亚军 · 季军
+            </div>
+            <table class="rank-table" id="top3Table">
+                <thead>
+                <tr><th>排名</th><th>玩家</th><th>速通时间</th></tr>
+                </thead>
+                <tbody id="top3Body">
+                </tbody>
+            </table>
+        </div>
+        <div class="podium-card">
+            <div class="card-header">
+                <i class="fas fa-ranking-star"></i> 📋 完整排名 & 参赛记录
+            </div>
+            <table class="rank-table">
+                <thead><tr><th>排名</th><th>玩家</th><th>速通时间</th></tr></thead>
+                <tbody id="fullRankBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="history-area">
+        <div class="history-title">
+            <i class="fas fa-calendar-alt"></i> 赛季荣誉殿堂
+            <span style="font-size:0.75rem;">首届月度挑战 · 四月榜</span>
+        </div>
+        <div class="month-selector" id="monthSelector"></div>
+        <div style="overflow-x: auto;">
+            <table class="history-table" id="historyTable">
+                <thead><tr><th>月份</th><th>冠军</th><th>亚军</th><th>季军</th></tr></thead>
+                <tbody id="historyBody"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div style="text-align:center; margin-top:2rem; font-size:0.9rem; opacity:0.8;">
+        主办方：LV114514 ｜ 赞助商：daiyu
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-hourglass-half"></i> 每月1日开启新赛季 · 月末截止并结算 · 速通成绩以游戏内速通计时器为准<br>
+    </div>
+</div>
+
+<script>
+    const DEMO_DATA = {
+        "2026-04": {
+            monthLabel: "2026年4月 · 首届挑战",
+            rankings: [
+                { rank: 1, player: "doduwdsj", time: "3:27.397", link: "https://b23.tv/h9i2efN" },
+                { rank: 2, player: "Moling", time: "3:28.220", link: "https://b23.tv/LGICdSN" },
+                { rank: 3, player: "daiyu", time: "3:31.310", link: "https://b23.tv/bUfybNp" },
+                { rank: 4, player: "北尖", time: "3:35.571", link: "https://b23.tv/iFmr5ng" },
+                { rank: 5, player: "罗大佑", time: "4:50.067", link: "https://b23.tv/Rx7v9MO" }
+            ],
+            status: "ongoing",      
+            progress: {
+                registrationEnd: "长期开放报名",
+                matchPeriod: "2026-04-06 至 2026-04-30",
+                resultDay: "2026-04-30"
+            }
+        }
+    };
+
+    let currentDisplayMonth = "2026-04";
+
+    function getStatusInfo(status) {
+        if(status === 'registration') return { text: '📢 报名阶段', icon: 'fa-door-open', color: '#c98f6e' };
+        if(status === 'ongoing') return { text: '⚔️ 比赛中 · 成绩实时更新', icon: 'fa-fire', color: '#f2794b' };
+        if(status === 'finalized') return { text: '', icon: 'fa-question', color: '#6fbf4c' };
+        return { text: '未知', icon: 'fa-question', color: '#aaa' };
+    }
+
+    function renderProgress(monthKey) {
+        const data = DEMO_DATA[monthKey];
+        if(!data) return;
+        const statusInfo = getStatusInfo(data.status);
+        const prog = data.progress;
+        let steps = [
+            { name: "📝 报名阶段", date: prog.registrationEnd ? `${prog.registrationEnd}` : "待定", active: false, completed: false },
+            { name: "🏃 速通竞技", date: prog.matchPeriod || "进行中", active: false, completed: false },
+            { name: "🏅 成绩结算", date: prog.resultDay || "待结算", active: false, completed: false }
+        ];
+        if(data.status === 'registration') {
+            steps[0].active = true;
+            steps[0].completed = false;
+        } else if(data.status === 'ongoing') {
+            steps[0].completed = true;
+            steps[1].active = true;
+        } else if(data.status === 'finalized') {
+            steps[0].completed = true;
+            steps[1].completed = true;
+            steps[2].completed = true;
+            steps[2].active = true;
+        }
+        const stepsHtml = steps.map(step => `
+            <div class="step ${step.active ? 'active' : ''} ${step.completed ? 'completed' : ''}">
+                <div class="step-icon">${step.name.split(' ')[0]}</div>
+                <div class="step-name">${step.name}</div>
+                <div class="step-date">${step.date}</div>
+            </div>
+        `).join('');
+        
+        const html = `
+            <div class="status-header">
+                <div class="month-year"><i class="fas fa-calendar-alt"></i> ${data.monthLabel}</div>
+                <div class="status-tag"><i class="fas ${statusInfo.icon}"></i> ${statusInfo.text}</div>
+            </div>
+            <div class="progress-steps">
+                ${stepsHtml}
+            </div>
+            <div style="font-size:0.85rem; margin-top:0.8rem; background:#00000040; border-radius:1rem; padding:0.6rem 1rem;">
+            </div>
+        `;
+        document.getElementById('progressSection').innerHTML = html;
+    }
+
+    function renderRankings(monthKey) {
+        const data = DEMO_DATA[monthKey];
+        if(!data || !data.rankings) return;
+        const rankings = [...data.rankings].sort((a,b) => a.rank - b.rank);
+        const top3 = rankings.filter(r => r.rank <= 3);
+        const rest = rankings.filter(r => r.rank > 3);
+        
+        let top3Html = '';
+        top3.forEach(entry => {
+            let rankClass = '';
+            if(entry.rank === 1) rankClass = 'rank-1';
+            else if(entry.rank === 2) rankClass = 'rank-2';
+            else if(entry.rank === 3) rankClass = 'rank-3';
+            top3Html += `<tr class="${rankClass}">
+                <td><span class="rank-badge">${entry.rank === 1 ? '🥇' : (entry.rank === 2 ? '🥈' : '🥉')} ${entry.rank}</span></td>
+                <td class="player-name"><a href="${entry.link}" target="_blank">${escapeHtml(entry.player)}</a></td>
+                <td class="player-time">${escapeHtml(entry.time)}</td>
+            </tr>`;
+        });
+        if(top3.length === 0) top3Html = '<tr class="empty-row"><td colspan="3">暂无排名数据</td></tr>';
+        document.getElementById('top3Body').innerHTML = top3Html;
+        
+        let fullHtml = '';
+        rankings.forEach(entry => {
+            let medal = '';
+            if(entry.rank === 1) medal = '🥇 ';
+            else if(entry.rank === 2) medal = '🥈 ';
+            else if(entry.rank === 3) medal = '🥉 ';
+            fullHtml += `<tr>
+                <td>${medal}${entry.rank}</td>
+                <td class="player-name"><a href="${entry.link}" target="_blank">${escapeHtml(entry.player)}</a></td>
+                <td class="player-time">${escapeHtml(entry.time)}</td>
+            </tr>`;
+        });
+        if(rankings.length === 0) fullHtml = '<tr class="empty-row"><td colspan="3">本月尚未有选手记录，比赛进行中</td></tr>';
+        document.getElementById('fullRankBody').innerHTML = fullHtml;
+    }
+
+    function renderHistoryAndSelector() {
+        const months = Object.keys(DEMO_DATA).sort().reverse();
+        const selectorDiv = document.getElementById('monthSelector');
+        let btnsHtml = '';
+        months.forEach(monthKey => {
+            const isActive = (monthKey === currentDisplayMonth);
+            const label = DEMO_DATA[monthKey].monthLabel;
+            btnsHtml += `<button class="month-btn ${isActive ? 'active' : ''}" data-month="${monthKey}">${label}</button>`;
+        });
+        if(months.length === 0) {
+            btnsHtml = '<span style="opacity:0.6">暂无历史月份</span>';
+        }
+        selectorDiv.innerHTML = btnsHtml;
+        
+        document.querySelectorAll('.month-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const monthVal = btn.getAttribute('data-month');
+                if(monthVal && DEMO_DATA[monthVal]) {
+                    currentDisplayMonth = monthVal;
+                    renderProgress(currentDisplayMonth);
+                    renderRankings(currentDisplayMonth);
+                    renderHistoryAndSelector();
+                }
+            });
+        });
+        
+        const historyBody = document.getElementById('historyBody');
+        let historyRows = '';
+        months.forEach(monthKey => {
+            const data = DEMO_DATA[monthKey];
+            if(!data) return;
+            const rankings = data.rankings;
+            const champion = rankings.find(r => r.rank === 1) || { player: '—', time: '', link: '#' };
+            const second = rankings.find(r => r.rank === 2) || { player: '—', time: '', link: '#' };
+            const third = rankings.find(r => r.rank === 3) || { player: '—', time: '', link: '#' };
+            historyRows += `<tr>
+                <td><strong>${data.monthLabel}</strong></td>
+                <td><a href="${champion.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(champion.player)}</a> ${champion.time ? `(${champion.time})` : ''}</td>
+                <td><a href="${second.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(second.player)}</a> ${second.time ? `(${second.time})` : ''}</td>
+                <td><a href="${third.link}" target="_blank" style="color:#f2bc94; text-decoration:none">${escapeHtml(third.player)}</a> ${third.time ? `(${third.time})` : ''}</td>
+            </tr>`;
+        });
+        if(historyRows === '') {
+            historyRows = '<tr><td colspan="4" style="text-align:center">暂无赛事数据</td></tr>';
+        }
+        historyBody.innerHTML = historyRows;
+    }
+    
+    function escapeHtml(str) {
+        if(!str) return '—';
+        return str.replace(/[&<>]/g, function(m) {
+            if(m === '&') return '&amp;';
+            if(m === '<') return '&lt;';
+            if(m === '>') return '&gt;';
+            return m;
+        });
+    }
+    
+    function init() {
+        renderProgress(currentDisplayMonth);
+        renderRankings(currentDisplayMonth);
+        renderHistoryAndSelector();
+    }
+    
+    init();
+</script>
+</body>
+</html>
