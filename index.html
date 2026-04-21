@@ -13,9 +13,8 @@
             box-sizing: border-box;
         }
         body {
-            background: url('https://p3-flow-image-sign.byteimg.com/tos-cn-i-83029277f0/3711e908391b40389111191190013c3c~tplv-83029277f0-image.image') no-repeat center center fixed;
+            background-color: #165DFF;
             background-size: cover;
-            background-color: rgba(50, 205, 50, 0.7);
             background-blend-mode: overlay;
             backdrop-filter: blur(2px);
             font-family: 'Inter', 'Chivo Mono', monospace, system-ui;
@@ -40,35 +39,35 @@
             border-radius: 60px;
             font-size: 0.8rem;
             letter-spacing: 1px;
-            border: 1px solid #32cd32;
-            color: #90ee90;
+            border: 1px solid #165DFF;
+            color: #fff;
             margin-bottom: 1rem;
         }
         h1 {
             font-size: 3.2rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, #32cd32, #00ff00);
+            background: linear-gradient(135deg, #ffffff, #165DFF, #69B1FF);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 3px rgba(50,205,50,0.9);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 3px rgba(22, 93, 255, 0.9);
             letter-spacing: -0.5px;
             -webkit-text-stroke: 0.5px rgba(0,0,0,0.3);
         }
         .sub {
             font-size: 1.1rem;
             color: #e0f7e0;
-            border-top: 1px dashed #32cd32;
+            border-top: 1px dashed #165DFF;
             display: inline-block;
             padding-top: 0.7rem;
             margin-top: 0.5rem;
             text-shadow: 0 1px 3px rgba(0,0,0,0.7);
         }
         .progress-section {
-            background: rgba(18, 24, 18, 0.75);
+            background: rgba(18, 24, 48, 0.75);
             backdrop-filter: blur(4px);
             border-radius: 2rem;
-            border: 1px solid rgba(50, 205, 50, 0.6);
+            border: 1px solid rgba(22, 93, 255, 0.6);
             padding: 1.6rem 2rem;
             margin-bottom: 3rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
@@ -80,20 +79,20 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #2f3a2f;
+            border-bottom: 1px solid #2f3a6f;
             padding-bottom: 0.8rem;
         }
         .month-year {
             font-size: 1.8rem;
             font-weight: 700;
             font-family: 'Chivo Mono', monospace;
-            background: #1e291e;
+            background: #1e294e;
             padding: 0.2rem 1rem;
             border-radius: 2rem;
             letter-spacing: 1px;
         }
         .status-tag {
-            background: #232e23;
+            background: #233467;
             padding: 0.4rem 1rem;
             border-radius: 2rem;
             font-weight: 600;
@@ -101,7 +100,7 @@
         }
         .status-tag i {
             margin-right: 8px;
-            color: #32cd32;
+            color: #165DFF;
         }
         .progress-steps {
             display: flex;
@@ -113,7 +112,7 @@
         .step {
             flex: 1;
             min-width: 140px;
-            background: #0d120d;
+            background: #0d122d;
             border-radius: 1.5rem;
             padding: 1rem 0.8rem;
             text-align: center;
@@ -121,18 +120,18 @@
             transition: all 0.2s;
         }
         .step.active {
-            background: linear-gradient(145deg, #283628, #1e291e);
-            box-shadow: 0 0 12px rgba(50, 205, 50, 0.4);
-            border-left-color: #32cd32;
+            background: linear-gradient(145deg, #283668, #1e294e);
+            box-shadow: 0 0 12px rgba(22, 93, 255, 0.4);
+            border-left-color: #165DFF;
         }
         .step.completed {
-            border-left-color: #4c9e6f;
-            background: #121a12;
+            border-left-color: #4c8eaf;
+            background: #121a32;
         }
         .step .step-icon {
             font-size: 1.8rem;
             margin-bottom: 6px;
-            color: #32cd32;
+            color: #165DFF;
         }
         .step .step-name {
             font-weight: 700;
@@ -146,26 +145,26 @@
             margin-bottom: 3rem;
         }
         .podium-card {
-            background: rgba(8, 12, 8, 0.7);
+            background: rgba(8, 12, 28, 0.7);
             backdrop-filter: blur(12px);
             border-radius: 2rem;
-            border: 1px solid rgba(50, 205, 50, 0.6);
+            border: 1px solid rgba(22, 93, 255, 0.6);
             overflow: hidden;
             transition: transform 0.2s;
         }
         .card-header {
-            background: #161f16;
+            background: #161f36;
             padding: 1rem 1.5rem;
             font-size: 1.3rem;
             font-weight: 700;
-            border-bottom: 2px solid #32cd32;
+            border-bottom: 2px solid #165DFF;
             display: flex;
             align-items: center;
             gap: 0.7rem;
         }
         .card-header i {
             font-size: 1.5rem;
-            color: #32cd32;
+            color: #165DFF;
         }
         .rank-table {
             width: 100%;
@@ -174,26 +173,26 @@
         .rank-table th, .rank-table td {
             padding: 1rem 1.2rem;
             text-align: left;
-            border-bottom: 1px solid #2c3a2c;
+            border-bottom: 1px solid #2c3a5c;
         }
         .rank-table th {
             font-weight: 600;
-            color: #90ee90;
-            background: #0d120d;
+            color: #fff;
+            background: #0d122d;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .rank-1 {
-            background: linear-gradient(90deg, #2c3a2c, #1f291f);
+            background: linear-gradient(90deg, #2c3a5c, #1f293f);
             border-left: 5px solid #ffff00;
         }
         .rank-2 {
-            background: linear-gradient(90deg, #213021, #182418);
+            background: linear-gradient(90deg, #213051, #182438);
             border-left: 5px solid #C0C0C0;
         }
         .rank-3 {
-            background: linear-gradient(90deg, #2f3a2f, #1c241c);
+            background: linear-gradient(90deg, #2f3a5f, #1c243c);
             border-left: 5px solid #CD7F32;
         }
         .player-name {
@@ -201,32 +200,26 @@
             font-size: 1.05rem;
         }
         .player-name a {
-            color: #90ee90;
+            color: #fff;
             text-decoration: none;
             transition: all 0.2s;
         }
         .player-name a:hover {
-            color: #32cd32;
-            text-shadow: 0 0 8px #32cd32;
+            color: #165DFF;
+            text-shadow: 0 0 8px #165DFF;
         }
         .player-time {
             font-family: 'Chivo Mono', monospace;
             font-weight: 600;
-            color: #90ee90;
-        }
-        .rank-badge {
-            display: inline-block;
-            width: 32px;
-            text-align: center;
-            font-weight: 800;
+            color: #fff;
         }
         .empty-row td {
-            color: #6a7e6a;
+            color: #6a7e9a;
             text-align: center;
             font-style: italic;
         }
         .history-area {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,30,0.5);
             backdrop-filter: blur(8px);
             border-radius: 1.8rem;
             padding: 1.5rem;
@@ -241,18 +234,18 @@
             margin-bottom: 1.2rem;
         }
         .history-title i {
-            color: #32cd32;
+            color: #165DFF;
         }
         .month-selector {
             display: flex;
-            the-flex-wrap: wrap;
+            flex-wrap: wrap;
             gap: 0.6rem;
             margin-bottom: 1.8rem;
         }
         .month-btn {
-            background: #1f291f;
+            background: #1f294e;
             border: none;
-            color: #90ee90;
+            color: #fff;
             padding: 0.5rem 1.2rem;
             border-radius: 2rem;
             font-weight: 500;
@@ -261,44 +254,44 @@
             font-family: inherit;
         }
         .month-btn.active {
-            background: #32cd32;
+            background: #165DFF;
             color: white;
-            box-shadow: 0 0 8px #32cd32;
+            box-shadow: 0 0 8px #165DFF;
         }
         .month-btn:hover {
-            background: #28a745;
+            background: #2873ff;
         }
         .history-table {
             width: 100%;
             border-collapse: collapse;
-            background: #0e140ea0;
+            background: #0e142ea0;
             border-radius: 1rem;
             overflow: hidden;
         }
         .history-table th, .history-table td {
             padding: 0.8rem;
             text-align: left;
-            border-bottom: 1px solid #2e3a2e;
+            border-bottom: 1px solid #2e3a6e;
         }
         .history-table th {
-            color: #90ee90;
+            color: #fff;
         }
         .footer {
             margin-top: 3rem;
             text-align: center;
             font-size: 0.8rem;
             opacity: 0.6;
-            border-top: 1px solid #2b3a2b;
+            border-top: 1px solid #2b3a5b;
             padding-top: 2rem;
         }
         .org-link {
-            color: #90ee90;
+            color: #fff;
             text-decoration: none;
             transition: all 0.2s;
         }
         .org-link:hover {
-            color: #32cd32;
-            text-shadow: 0 0 8px #32cd32;
+            color: #165DFF;
+            text-shadow: 0 0 8px #165DFF;
         }
         i, .fas, .far {
             pointer-events: none;
@@ -360,7 +353,493 @@
         "2026-04": {
             monthLabel: "2026年4月 · 首届挑战",
             rankings: [
-                { rank: 1, player: "Moling", time: "3:24.324", link: "https://b23.tv/placeholder" },
+                { rank: 1, player: "Moling", time: "3:21.521", link: "https://b23.tv/llkkydn" },
+                { rank: 2, player: "chahly", time: "3:26.944", link: "https://b23.tv/3VrVKWF" },
+                { rank: 3, player: "doduwdsj", time: "3:27.397", link: "https://b23.tv/h9i2efN" },
+                { rank: 4, player: "dlrowtiup", time: "3:29.933", link: "https://b23.tv/gaFUv4h" },
+                { rank: 5, player: "daiyu", time: "3:31.310", link: "https://b23.tv/bUfybNp" },
+                { rank: 6, player: "北尖", time: "3:35.571", link: "https://b23.tv/iFmr5ng" },
+                { rank: 7, player: "罗大佑", time: "4:50.067", link: "https://b23.tv/Rx7v9MO" }
+            ],
+            status: "ongoing",      
+            progress: {
+                registrationEnd: "长期开放报名",
+                matchPeriod: "2026-04-01 至 2026-04-30",
+                resultDay: "2026-04-30"
+            }
+        }
+    };
+
+    let currentDisplayMonth = "2026-04";
+
+    function getStatusInfo(status) {
+        if(status === 'registration') return { text: '📢 报名阶段', icon: 'fa-door-open', color: '#c98f6e' };
+        if(status === 'ongoing') return { text: '⚔️ 比赛中 · 成绩实时更新', icon: 'fa-fire', color: '#f2794b' };
+        if(status === 'finalized') return { text: '🏆 已完结', icon: 'fa-trophy', color: '#6fbf4c' };
+        return { text: '未知', icon: 'fa-question', color: '#aaa' };
+    }
+
+    function renderProgress(monthKey) {
+        const data = DEMO_DATA[monthKey];
+        if(!data) return;
+        const statusInfo = getStatusInfo(data.status);
+        const prog = data.progress;
+
+        let steps = [
+            { name: "📝 报名阶段", date: prog.registrationEnd ? `${prog.registrationEnd}` : "待定", active: false, completed: false },
+            { name: "🏃 速通竞技", date: prog.matchPeriod || "进行中", active: false, completed: false },
+            { name: "🏅 成绩结算", date: prog.resultDay || "待结算", active: false, completed: false }
+        ];
+
+        if(data.status === 'registration') {
+            steps[0].active = true;
+        } else if(data.status === 'ongoing') {
+            steps[0].completed = true;
+            steps[1].active = true;
+        } else if(data.status === 'finalized') {
+            steps[0].completed = true;
+            steps[1].completed = true;
+            steps[2].completed = true;
+            steps[2].active = true;
+        }
+
+        const stepsHtml = steps.map(step => `
+            <div class="step ${step.active ? 'active' : ''} ${step.completed ? 'completed' : ''}">
+                <div class="step-icon">${step.name.split(' ')[0]}</div>
+                <div class="step-name">${step.name}</div>
+                <div class="step-date">${step.date}</div>
+            </div>
+        `).join('');
+        
+        const html = `
+            <div class="status-header">
+                <div class="month-year"><i class="fas fa-calendar-alt"></i> ${data.monthLabel}</div>
+                <div class="status-tag"><i class="fas ${statusInfo.icon}"></i> ${statusInfo.text}</div>
+            </div>
+            <div class="progress-steps">
+                ${stepsHtml}
+            </div>
+        `;
+        document.getElementById('progressSection').innerHTML = html;
+    }
+
+    function renderRankings(monthKey) {
+        const data = DEMO_DATA[monthKey];
+        if(!data || !data.rankings) return;
+        const rankings = [...data.rankings].sort((a,b) => a.rank - b.rank);
+        
+        let fullHtml = '';
+        rankings.forEach(entry => {
+            let rankClass = '';
+            if(entry.rank === 1) rankClass = 'rank-1';
+            else if(entry.rank === 2) rankClass = 'rank-2';
+            else if(entry.rank === 3) rankClass = 'rank-3';
+            
+            let medal = '';
+            if(entry.rank === 1) medal = '🥇 ';
+            else if(entry.rank === 2) medal = '🥈 ';
+            else if(entry.rank === 3) medal = '🥉 ';
+            
+            fullHtml += `<tr class="${rankClass}">
+                <td>${medal}${entry.rank}</td>
+                <td class="player-name"><a href="${entry.link}" target="_blank">${escapeHtml(entry.player)}</a></td>
+                <td class="player-time">${escapeHtml(entry.time)}</td>
+            </tr>`;
+        });
+        if(rankings.length === 0) fullHtml = '<tr class="empty-row"><td colspan="3">本月尚未有选手记录，比赛进行中</td></tr>';
+        document.getElementById('fullRankBody').innerHTML = fullHtml;
+    }
+
+    function renderHistoryAndSelector() {
+        const months = Object.keys(DEMO_DATA).sort().reverse();
+        const selectorDiv = document.getElementById('monthSelector');
+        let btnsHtml = '';
+
+        months.forEach(monthKey => {
+            const isActive = (monthKey === currentDisplayMonth);
+            const label = DEMO_DATA[monthKey].monthLabel;
+            btnsHtml += `<button class="month-btn ${isActive ? 'active' : ''}" data-month="${monthKey}">${label}</button>`;
+        });
+        if(months.length === 0) {
+            btnsHtml = '<span style="opacity:0.6">暂无历史月份</span>';
+        }
+        selectorDiv.innerHTML = btnsHtml;
+        
+        document.querySelectorAll('.month-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const monthVal = btn.getAttribute('data-month');
+                if(monthVal && DEMO_DATA[monthVal]) {
+                    currentDisplayMonth = monthVal;
+                    renderProgress(currentDisplayMonth);
+                    renderRankings(currentDisplayMonth);
+                    renderHistoryAndSelector();
+                }
+            });
+        });
+        
+        const historyBody = document.getElementById('historyBody');
+        let historyRows = '';
+        months.forEach(monthKey => {
+            const data = DEMO_DATA[monthKey];
+            if(!data) return给你**把北尖加回去**，排名按时间排好，**蓝色背景不变**，直接复制这段完整代码即可：
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Granny月度挑战 | 四月冠军殿堂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@400;500;600;700&family=Chivo+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #165DFF;
+            background-size: cover;
+            background-blend-mode: overlay;
+            backdrop-filter: blur(2px);
+            font-family: 'Inter', 'Chivo Mono', monospace, system-ui;
+            color: #edeef2;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .game-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: 1px solid #165DFF;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #165DFF, #69B1FF);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 0 3px rgba(22, 93, 255, 0.9);
+            letter-spacing: -0.5px;
+            -webkit-text-stroke: 0.5px rgba(0,0,0,0.3);
+        }
+        .sub {
+            font-size: 1.1rem;
+            color: #e0f7e0;
+            border-top: 1px dashed #165DFF;
+            display: inline-block;
+            padding-top: 0.7rem;
+            margin-top: 0.5rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+        }
+        .progress-section {
+            background: rgba(18, 24, 48, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            border: 1px solid rgba(22, 93, 255, 0.6);
+            padding: 1.6rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        .status-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #2f3a6f;
+            padding-bottom: 0.8rem;
+        }
+        .month-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Chivo Mono', monospace;
+            background: #1e294e;
+            padding: 0.2rem 1rem;
+            border-radius: 2rem;
+            letter-spacing: 1px;
+        }
+        .status-tag {
+            background: #233467;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .status-tag i {
+            margin-right: 8px;
+            color: #165DFF;
+        }
+        .progress-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin: 1.5rem 0 1rem;
+        }
+        .step {
+            flex: 1;
+            min-width: 140px;
+            background: #0d122d;
+            border-radius: 1.5rem;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            border-left: 3px solid;
+            transition: all 0.2s;
+        }
+        .step.active {
+            background: linear-gradient(145deg, #283668, #1e294e);
+            box-shadow: 0 0 12px rgba(22, 93, 255, 0.4);
+            border-left-color: #165DFF;
+        }
+        .step.completed {
+            border-left-color: #4c8eaf;
+            background: #121a32;
+        }
+        .step .step-icon {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            color: #165DFF;
+        }
+        .step .step-name {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .step .step-date {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+        .full-rank-container {
+            margin-bottom: 3rem;
+        }
+        .podium-card {
+            background: rgba(8, 12, 28, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(22, 93, 255, 0.6);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card-header {
+            background: #161f36;
+            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-bottom: 2px solid #165DFF;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .card-header i {
+            font-size: 1.5rem;
+            color: #165DFF;
+        }
+        .rank-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .rank-table th, .rank-table td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #2c3a5c;
+        }
+        .rank-table th {
+            font-weight: 600;
+            color: #fff;
+            background: #0d122d;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .rank-1 {
+            background: linear-gradient(90deg, #2c3a5c, #1f293f);
+            border-left: 5px solid #ffff00;
+        }
+        .rank-2 {
+            background: linear-gradient(90deg, #213051, #182438);
+            border-left: 5px solid #C0C0C0;
+        }
+        .rank-3 {
+            background: linear-gradient(90deg, #2f3a5f, #1c243c);
+            border-left: 5px solid #CD7F32;
+        }
+        .player-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .player-name a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .player-name a:hover {
+            color: #165DFF;
+            text-shadow: 0 0 8px #165DFF;
+        }
+        .player-time {
+            font-family: 'Chivo Mono', monospace;
+            font-weight: 600;
+            color: #fff;
+        }
+        .empty-row td {
+            color: #6a7e9a;
+            text-align: center;
+            font-style: italic;
+        }
+        .history-area {
+            background: rgba(0,0,30,0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .history-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .history-title i {
+            color: #165DFF;
+        }
+        .month-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+        .month-btn {
+            background: #1f294e;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .month-btn.active {
+            background: #165DFF;
+            color: white;
+            box-shadow: 0 0 8px #165DFF;
+        }
+        .month-btn:hover {
+            background: #2873ff;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #0e142ea0;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .history-table th, .history-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #2e3a6e;
+        }
+        .history-table th {
+            color: #fff;
+        }
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid #2b3a5b;
+            padding-top: 2rem;
+        }
+        .org-link {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .org-link:hover {
+            color: #165DFF;
+            text-shadow: 0 0 8px #165DFF;
+        }
+        i, .fas, .far {
+            pointer-events: none;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="game-badge">
+            <i class="fas fa-skull"></i> 速通殿堂 · 四月血战 <i class="fas fa-clock"></i>
+        </div>
+        <h1>🏚️ Granny月度挑战</h1>
+        <div class="sub"># 首届月度赛</div>
+    </div>
+    <div class="progress-section" id="progressSection">
+    </div>
+    <div style="text-align:center; margin-bottom:1rem; color:#ccc; font-size:0.95rem;">
+        👉 点击 / 长按选手名字，即可跳转到对应速通视频
+    </div>
+    <div class="full-rank-container">
+        <div class="podium-card">
+            <div class="card-header">
+                <i class="fas fa-ranking-star"></i> 📋 完整排名 & 参赛记录
+            </div>
+            <table class="rank-table">
+                <thead><tr><th>排名</th><th>玩家</th><th>速通时间</th></tr></thead>
+                <tbody id="fullRankBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="history-area">
+        <div class="history-title">
+            <i class="fas fa-calendar-alt"></i> 赛季荣誉殿堂
+            <span style="font-size:0.75rem;">首届月度挑战 · 四月榜</span>
+        </div>
+        <div class="month-selector" id="monthSelector"></div>
+        <div style="overflow-x: auto;">
+            <table class="history-table" id="historyTable">
+                <thead><tr><th>月份</th><th>冠军</th><th>亚军</th><th>季军</th></tr></thead>
+                <tbody id="historyBody"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div style="text-align:center; margin-top:2rem; font-size:0.9rem; opacity:0.8;">
+        主办方：<a href="https://www.speedrun.com/users/lv114514" target="_blank" class="org-link">LV114514</a> ｜ 赞助商：<a href="https://www.speedrun.com/users/daiyu_" target="_blank" class="org-link">daiyu</a>
+    </div>
+    <div class="footer">
+        <i class="fas fa-hourglass-half"></i> 每月1日开启新赛季 · 月末截止并结算 · 速通成绩以游戏内速通计时器为准<br>
+    </div>
+</div>
+
+<script>
+    const DEMO_DATA = {
+        "2026-04": {
+            monthLabel: "2026年4月 · 首届挑战",
+            rankings: [
+                { rank: 1, player: "Moling", time: "3:21.521", link: "https://b23.tv/llkkydn" },
                 { rank: 2, player: "chahly", time: "3:26.944", link: "https://b23.tv/3VrVKWF" },
                 { rank: 3, player: "doduwdsj", time: "3:27.397", link: "https://b23.tv/h9i2efN" },
                 { rank: 4, player: "dlrowtiup", time: "3:29.933", link: "https://b23.tv/gaFUv4h" },
@@ -496,9 +975,9 @@
 
             historyRows += `<tr>
                 <td><strong>${data.monthLabel}</strong></td>
-                <td><a href="${champion.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(champion.player)}</a> ${champion.time ? `(${champion.time})` : ''}</td>
-                <td><a href="${second.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(second.player)}</a> ${second.time ? `(${second.time})` : ''}</td>
-                <td><a href="${third.link}" target="_blank" style="color:#90ee90; text-decoration:none">${escapeHtml(third.player)}</a> ${third.time ? `(${third.time})` : ''}</td>
+                <td><a href="${champion.link}" target="_blank" style="color:#fff; text-decoration:none">${escapeHtml(champion.player)}</a> ${champion.time ? `(${champion.time})` : ''}</td>
+                <td><a href="${second.link}" target="_blank" style="color:#fff; text-decoration:none">${escapeHtml(second.player)}</a> ${second.time ? `(${second.time})` : ''}</td>
+                <td><a href="${third.link}" target="_blank" style="color:#fff; text-decoration:none">${escapeHtml(third.player)}</a> ${third.time ? `(${third.time})` : ''}</td>
             </tr>`;
         });
         if(historyRows === '') {
